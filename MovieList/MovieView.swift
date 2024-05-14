@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct MovieView: View {
+    var title: String
+    var subTitle: String
+    var image: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 20) {
+            Image(image)
+                .resizable()
+                .scaledToFit()
+            Text(title)
+                .font(.title)
+                .padding()
+            Text(subTitle)
+                .font(.subheadline)
+                .padding()
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    MovieView()
+    MovieView(title: "Title", subTitle: "SubTitle", image: "movie")
 }
